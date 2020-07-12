@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src="algorith.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<body>
+    <script>
+        var start = '10';
+        //get all solutions
+        var solutions = solve(graph, start);
+
+        console.log("From '" + start + "' to");
+        //display solutions
+        for (var s in solutions) {
+            if (!solutions[s]) continue;
+            console.log(" -> " + s + ": [" + solutions[s].join(", ") + "]   (dist:" + solutions[s].dist + ")");
+        }
+    </script>
+
+</body>
+
+</html>
