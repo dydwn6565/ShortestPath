@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html>
-<script src="algorith.js"></script>
+<script src="dijkstra.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css">
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<style>
+    #h1i {
+        background-color: black;
+        color: rgb(119, 115, 115);
+    }
+</style>
 
 <body>
-    <script>
-        var start = '10';
-        //get all solutions
-        var solutions = solve(graph, start);
+    <div id="hi">
+        <input id="searchValue" type="number" placeholder="Search" required></div>
+    <input id="searchValue1" type="number" placeholder="Search" required></div>
 
-        console.log("From '" + start + "' to");
-        //display solutions
-        for (var s in solutions) {
-            if (!solutions[s]) continue;
-            console.log(" -> " + s + ": [" + solutions[s].join(", ") + "]   (dist:" + solutions[s].dist + ")");
+    <button onclick="myFunction()">button</button>
+    </div>
+
+    <script>
+        function myFunction() {
+            var start = document.getElementById("searchValue").value;
+            var end = document.getElementById("searchValue1").value;
+            console.log(start);
+
+            var solutions = solve(graph, start);
+            console.log("From '" + start + "' to " + end);
+            // for (var s in solutions) {
+            //     if (!solutions[s]) continue;
+            //     console.log(" -> " + s + ": [" + solutions[s].join(", ") + "] (dist:" + solutions[s].dist + ")");
+            // }
+            var distance = solutions[end].dist;
+            console.log(distance);
+
         }
     </script>
 
