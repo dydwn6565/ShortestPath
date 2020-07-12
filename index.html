@@ -2,13 +2,163 @@
 <html>
 <script src="dijkstra.js"></script>
 <link rel="stylesheet" type="text/css" href="css.css">
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<canvas id="canvas" width='600px' height="500px"></canvas> -->
 <style>
-    #h1i {
+    #myContainer {
+        width: 700px;
+        height: 700px;
+        position: relative;
+        background: yellow;
+    }
+    
+    #myAnimation {
+        width: 50px;
+        height: 50px;
+        /* position: absolute; */
+        background-color: red;
+    }
+    
+    .img-box {
+        margin: 40px;
+    }
+    
+    a.avatar-link {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .img-box img.user-avatar {
+        border-radius: 50%;
+        display: block;
+    }
+    
+    .user-status-one {
+        border-radius: 50%;
+        height: 30px;
+        margin-top: -50px;
+        margin-left: 0px;
+        position: absolute;
+        /* right: 30px;
+        bottom: 30px; */
+        width: 30px;
         background-color: black;
-        color: rgb(119, 115, 115);
+    }
+    
+    .user-status-two {
+        border-radius: 50%;
+        height: 30px;
+        margin-top: -50px;
+        margin-left: 250px;
+        position: absolute;
+        /* right: 30px;
+        bottom: 30px; */
+        width: 30px;
+        background-color: black;
+    }
+    
+    .user-status-three {
+        border-radius: 50%;
+        height: 30px;
+        margin-top: -50px;
+        margin-left: 500px;
+        /* right: 30px;
+        bottom: 30px; */
+        position: absolute;
+        width: 30px;
+        background-color: black;
+    }
+    
+    .user-status-four {
+        border-radius: 50%;
+        height: 30px;
+        margin-top: 150px;
+        margin-left: 0px;
+        position: absolute;
+        /* right: 30px;
+        bottom: 30px; */
+        width: 30px;
+        background-color: black;
+    }
+    
+    .user-status-five {
+        border-radius: 50%;
+        height: 30px;
+        margin-top: 150px;
+        margin-left: 250px;
+        position: absolute;
+        /* right: 30px;
+        bottom: 30px; */
+        width: 30px;
+        background-color: black;
+    }
+    
+    .user-status-six {
+        border-radius: 50%;
+        height: 30px;
+        margin-top: 150px;
+        margin-left: 500px;
+        position: absolute;
+        /* right: 30px;
+        bottom: 30px; */
+        width: 30px;
+        background-color: black;
+    }
+    
+    .user-status-seven {
+        border-radius: 50%;
+        height: 30px;
+        margin-top: 350px;
+        margin-left: 0px;
+        position: absolute;
+        /* right: 30px;
+        bottom: 30px; */
+        width: 30px;
+        background-color: black;
+    }
+    
+    .user-status-eight {
+        border-radius: 50%;
+        height: 30px;
+        margin-top: 350px;
+        margin-left: 250px;
+        position: absolute;
+        /* right: 30px;
+        bottom: 30px; */
+        width: 30px;
+        background-color: black;
+    }
+    
+    .user-status-nine {
+        border-radius: 50%;
+        height: 30px;
+        margin-top: 350px;
+        margin-left: 500px;
+        position: absolute;
+        /* right: 30px;
+        bottom: 30px; */
+        width: 30px;
+        background-color: black;
+    }
+    
+    .user-status-ten {
+        border-radius: 50%;
+        height: 30px;
+        margin-top: 550px;
+        margin-left: 0px;
+        position: absolute;
+        /* right: 30px;
+        bottom: 30px; */
+        width: 30px;
+        background-color: black;
+    }
+    
+    .img-box img.user-avatar[width="140"]+.user-status {
+        right: 16px;
+        bottom: 15px;
     }
 </style>
+
 
 <body>
     <div id="hi">
@@ -16,25 +166,60 @@
     <input id="searchValue1" type="number" placeholder="Search" required></div>
 
     <button onclick="myFunction()">button</button>
+
     </div>
+    <button onclick="myMove()">Click Me</button>
+    <div id="myContainer">
+        <div id="myAnimation"></div>
 
-    <script>
-        function myFunction() {
-            var start = document.getElementById("searchValue").value;
-            var end = document.getElementById("searchValue1").value;
-            console.log(start);
+        <div class="img-box">
+            <!-- <a class="avatar-link" href="#"> -->
+            <div class="user-status-one"></div>
+            <div class="user-status-two"></div>
+            <div class="user-status-three"></div>
+            <div class="user-status-four"></div>
+            <div class="user-status-five"></div>
+            <div class="user-status-six"></div>
+            <div class="user-status-seven"></div>
+            <div class="user-status-eight"></div>
+            <div class="user-status-nine"></div>
+            <div class="user-status-ten"></div>
 
-            var solutions = solve(graph, start);
-            console.log("From '" + start + "' to " + end);
-            // for (var s in solutions) {
-            //     if (!solutions[s]) continue;
-            //     console.log(" -> " + s + ": [" + solutions[s].join(", ") + "] (dist:" + solutions[s].dist + ")");
-            // }
-            var distance = solutions[end].dist;
-            console.log(distance);
+            </a>
+        </div>
+        <script>
+            function myMove() {
+                var elem = document.getElementById("myAnimation");
+                var pos = 0;
+                var id = setInterval(frame, 15);
 
-        }
-    </script>
+                function frame() {
+                    if (pos == 350) {
+                        clearInterval(id);
+                    } else {
+                        pos++;
+                        // elem.style.top = pos + 'px';
+                        elem.style.left = pos + 'px';
+                    }
+                }
+            }
+
+            function myFunction() {
+                var start = document.getElementById("searchValue").value;
+                var end = document.getElementById("searchValue1").value;
+                console.log(start);
+
+                var solutions = solve(graph, start);
+                console.log("From '" + start + "' to " + end);
+                for (var s in solutions) {
+                    if (!solutions[s]) continue;
+                    console.log(" -> " + s + ": [" + solutions[s].join(", ") + "] (dist:" + solutions[s].dist + ")");
+                }
+                var distance = solutions[end].dist;
+                console.log(distance);
+
+            }
+        </script>
 
 </body>
 
