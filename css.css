@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.squares {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    background-color: deepskyblue;
+    display: inline-block;
+}
+
+#myContainer {
+    width: 700px;
+    height: 700px;
+    position: relative;
+    background: yellow;
+}
+
+#myAnimation {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 30px;
+    background-color: red;
+}
+
+.img-box {
+    margin: 40px;
+}
+
+a.avatar-link {
+    position: relative;
+    display: inline-block;
+}
+
+.img-box img.user-avatar {
+    border-radius: 50%;
+    display: block;
+}
+
+.user-status-one {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+}
+
+.user-status-two {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 0px;
+    margin-left: 250px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+}
+
+.user-status-three {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 0px;
+    margin-left: 500px;
+    /* right: 30px;
+    bottom: 30px; */
+    position: absolute;
+    width: 30px;
+    background-color: black;
+}
+
+.user-status-four {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 200px;
+    margin-left: 0px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+}
+
+.user-status-five {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 200px;
+    margin-left: 250px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+}
+
+.user-status-six {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 200px;
+    margin-left: 500px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+}
+
+.user-status-seven {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 400px;
+    margin-left: 0px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+}
+
+.user-status-eight {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 400px;
+    margin-left: 250px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+}
+
+.user-status-nine {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 400px;
+    margin-left: 500px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+}
+
+.user-status-ten {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 600px;
+    margin-left: 0px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+}
+
+.img-box img.user-avatar[width="140"]+.user-status {
+    right: 16px;
+    bottom: 15px;
+}

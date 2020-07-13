@@ -2,161 +2,10 @@
 <html>
 <script src="dijkstra.js"></script>
 <link rel="stylesheet" type="text/css" href="css.css">
-<!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<canvas id="canvas" width='600px' height="500px"></canvas> -->
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+
 <style>
-    #myContainer {
-        width: 700px;
-        height: 700px;
-        position: relative;
-        background: yellow;
-    }
-    
-    #myAnimation {
-        width: 50px;
-        height: 50px;
-        /* position: absolute; */
-        background-color: red;
-    }
-    
-    .img-box {
-        margin: 40px;
-    }
-    
-    a.avatar-link {
-        position: relative;
-        display: inline-block;
-    }
-    
-    .img-box img.user-avatar {
-        border-radius: 50%;
-        display: block;
-    }
-    
-    .user-status-one {
-        border-radius: 50%;
-        height: 30px;
-        margin-top: -50px;
-        margin-left: 0px;
-        position: absolute;
-        /* right: 30px;
-        bottom: 30px; */
-        width: 30px;
-        background-color: black;
-    }
-    
-    .user-status-two {
-        border-radius: 50%;
-        height: 30px;
-        margin-top: -50px;
-        margin-left: 250px;
-        position: absolute;
-        /* right: 30px;
-        bottom: 30px; */
-        width: 30px;
-        background-color: black;
-    }
-    
-    .user-status-three {
-        border-radius: 50%;
-        height: 30px;
-        margin-top: -50px;
-        margin-left: 500px;
-        /* right: 30px;
-        bottom: 30px; */
-        position: absolute;
-        width: 30px;
-        background-color: black;
-    }
-    
-    .user-status-four {
-        border-radius: 50%;
-        height: 30px;
-        margin-top: 150px;
-        margin-left: 0px;
-        position: absolute;
-        /* right: 30px;
-        bottom: 30px; */
-        width: 30px;
-        background-color: black;
-    }
-    
-    .user-status-five {
-        border-radius: 50%;
-        height: 30px;
-        margin-top: 150px;
-        margin-left: 250px;
-        position: absolute;
-        /* right: 30px;
-        bottom: 30px; */
-        width: 30px;
-        background-color: black;
-    }
-    
-    .user-status-six {
-        border-radius: 50%;
-        height: 30px;
-        margin-top: 150px;
-        margin-left: 500px;
-        position: absolute;
-        /* right: 30px;
-        bottom: 30px; */
-        width: 30px;
-        background-color: black;
-    }
-    
-    .user-status-seven {
-        border-radius: 50%;
-        height: 30px;
-        margin-top: 350px;
-        margin-left: 0px;
-        position: absolute;
-        /* right: 30px;
-        bottom: 30px; */
-        width: 30px;
-        background-color: black;
-    }
-    
-    .user-status-eight {
-        border-radius: 50%;
-        height: 30px;
-        margin-top: 350px;
-        margin-left: 250px;
-        position: absolute;
-        /* right: 30px;
-        bottom: 30px; */
-        width: 30px;
-        background-color: black;
-    }
-    
-    .user-status-nine {
-        border-radius: 50%;
-        height: 30px;
-        margin-top: 350px;
-        margin-left: 500px;
-        position: absolute;
-        /* right: 30px;
-        bottom: 30px; */
-        width: 30px;
-        background-color: black;
-    }
-    
-    .user-status-ten {
-        border-radius: 50%;
-        height: 30px;
-        margin-top: 550px;
-        margin-left: 0px;
-        position: absolute;
-        /* right: 30px;
-        bottom: 30px; */
-        width: 30px;
-        background-color: black;
-    }
-    
-    .img-box img.user-avatar[width="140"]+.user-status {
-        right: 16px;
-        bottom: 15px;
-    }
+
 </style>
 
 
@@ -168,12 +17,12 @@
     <button onclick="myFunction()">button</button>
 
     </div>
-    <button onclick="myMove()">Click Me</button>
+    <button onclick="animations()">Click Me</button>
     <div id="myContainer">
-        <div id="myAnimation"></div>
+        <!-- <div id="myAnimation"></div> -->
 
         <div class="img-box">
-            <!-- <a class="avatar-link" href="#"> -->
+
             <div class="user-status-one"></div>
             <div class="user-status-two"></div>
             <div class="user-status-three"></div>
@@ -187,20 +36,92 @@
 
             </a>
         </div>
-        <script>
-            function myMove() {
-                var elem = document.getElementById("myAnimation");
-                var pos = 0;
-                var id = setInterval(frame, 15);
+        <div id="div1" class="squares"></div>
 
-                function frame() {
-                    if (pos == 350) {
-                        clearInterval(id);
-                    } else {
-                        pos++;
-                        // elem.style.top = pos + 'px';
-                        elem.style.left = pos + 'px';
-                    }
+        <script>
+            function animations() {
+
+                var end = document.getElementById("searchValue1").value;
+                const t = anime.timeline({
+                    //each of the below animations will have a 1000ms duration
+                    //and easeInSine easing
+                    duration: 1000,
+                    easing: 'easeInSine'
+                });
+                if (end == '2') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 250
+                    })
+                }
+                if (end == '3') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 500
+                    })
+                }
+                if (end == '4') {
+                    t.add({
+                        targets: '#div1',
+                        translateY: 200
+                    })
+
+                }
+                if (end == '5') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 250
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 200
+                    })
+
+                }
+                if (end == '6') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 500
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 200
+                    })
+                }
+                if (end == '7') {
+                    t.add({
+                        targets: '#div1',
+                        translateY: 400
+                    })
+
+                }
+                if (end == '8') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 250
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 400
+                    })
+
+                }
+                if (end == '9') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 500
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 400
+                    })
+                }
+                if (end == '10') {
+                    t.add({
+                        targets: '#div1',
+                        translateY: 600
+                    })
+
                 }
             }
 
@@ -216,7 +137,7 @@
                     console.log(" -> " + s + ": [" + solutions[s].join(", ") + "] (dist:" + solutions[s].dist + ")");
                 }
                 var distance = solutions[end].dist;
-                console.log(distance);
+
 
             }
         </script>
