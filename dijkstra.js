@@ -43,6 +43,7 @@ function solve(graph, s) {
 
     return solutions;
 }
+
 //create graph
 var graph = {};
 
