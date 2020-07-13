@@ -5,40 +5,92 @@
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
 
 <style>
-
+    .user-status-one {
+        text-emphasis-color: white;
+    }
 </style>
 
 
 <body>
-    <div id="hi">
-        <input id="searchValue" type="number" placeholder="Search" required></div>
-    <input id="searchValue1" type="number" placeholder="Search" required></div>
 
-    <button onclick="myFunction()">button</button>
+    <!-- <button class="open-button" onclick="openForm()">Open Form</button> -->
+
+    <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>The List of the movement</h1>
+
+            <div id="Poistion"></div>
+
+
+
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <div class="container">
+        <div class="center">
+            <button class="btn" onclick="myFunction()">
+            <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+            </svg>
+            <span>Button</span>
+          </button>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="center2">
+            <button class="btn" onclick="animations()">
+            <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+            </svg>
+            <span>Click me</span>
+          </button>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="search">
+
+            <input id="searchValue1" class="searchTerm" type="number" placeholder="Search" required></div>
+
+        <i class="fa fa-search"></i>
+        </button>
 
     </div>
-    <button onclick="animations()">Click Me</button>
-    <div id="myContainer">
-        <!-- <div id="myAnimation"></div> -->
+    </div>
+
+    <div id="content">
+
 
         <div class="img-box">
 
-            <div class="user-status-one"></div>
-            <div class="user-status-two"></div>
-            <div class="user-status-three"></div>
-            <div class="user-status-four"></div>
-            <div class="user-status-five"></div>
-            <div class="user-status-six"></div>
-            <div class="user-status-seven"></div>
-            <div class="user-status-eight"></div>
-            <div class="user-status-nine"></div>
-            <div class="user-status-ten"></div>
+            <div class="user-status-one">1</div>
+            <div class="user-status-two">2</div>
+            <div class="user-status-three">3</div>
+            <div class="user-status-four">4</div>
+            <div class="user-status-five">5</div>
+            <div class="user-status-six">6</div>
+            <div class="user-status-seven">7</div>
+            <div class="user-status-eight">8</div>
+            <div class="user-status-nine">9</div>
+            <div class="user-status-ten">10</div>
 
             </a>
         </div>
         <div id="div1" class="squares"></div>
-
+        <!-- </div> -->
         <script>
+            const input = document.getElementById("search-input");
+            const searchBtn = document.getElementById("search-btn");
+
+            const expand = () => {
+                searchBtn.classList.toggle("close");
+                input.classList.toggle("square");
+            };
+
+            searchBtn.addEventListener("click", expand);
+
             function animations() {
 
                 var end = document.getElementById("searchValue1").value;
@@ -126,19 +178,43 @@
             }
 
             function myFunction() {
-                var start = document.getElementById("searchValue").value;
-                var end = document.getElementById("searchValue1").value;
-                console.log(start);
 
-                var solutions = solve(graph, start);
-                console.log("From '" + start + "' to " + end);
+                var end = document.getElementById("searchValue1").value;
+                console.log(1);
+
+                var solutions = solve(graph, 1);
+                console.log("From '" + 1 + "' to " + end);
                 for (var s in solutions) {
                     if (!solutions[s]) continue;
                     console.log(" -> " + s + ": [" + solutions[s].join(", ") + "] (dist:" + solutions[s].dist + ")");
                 }
                 var distance = solutions[end].dist;
+                openForm();
+                addvalue();
+
+            }
+
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function addvalue() {
+                var solutions = solve(graph, 1);
+                var end = document.getElementById("searchValue1").value;
+                var i = 0;
+                while (solutions[end][i]) {
+                    var para = document.createElement("P");
+                    para.innerHTML = solutions[end][i];
+
+                    document.getElementById("Poistion").appendChild(para);
+                    i++;
+
+                }
+            }
 
 
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
             }
         </script>
 
