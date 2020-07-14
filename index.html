@@ -4,24 +4,15 @@
 <link rel="stylesheet" type="text/css" href="css.css">
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
 
-<style>
-    .user-status-one {
-        text-emphasis-color: white;
-    }
-</style>
-
-
 <body>
-
-    <!-- <button class="open-button" onclick="openForm()">Open Form</button> -->
 
     <div class="form-popup" id="myForm">
         <form action="/action_page.php" class="form-container">
-            <h1>The List of the movement</h1>
+            <h1>Movement List</h1>
 
-            <div id="Poistion"></div>
-
-
+            <div id="Poistion">
+                <p>[ 1 ]</p>
+            </div>
 
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
@@ -33,7 +24,7 @@
               <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
               <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
             </svg>
-            <span>Button</span>
+            <span>Route</span>
           </button>
         </div>
     </div>
@@ -44,7 +35,7 @@
               <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
               <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
             </svg>
-            <span>Click me</span>
+            <span>Animations</span>
           </button>
         </div>
     </div>
@@ -52,7 +43,7 @@
     <div class="wrap">
         <div class="search">
 
-            <input id="searchValue1" class="searchTerm" type="number" placeholder="Search" required></div>
+            <input id="searchValue1" class="searchTerm" type="number" placeholder="Location" required></div>
 
         <i class="fa fa-search"></i>
         </button>
@@ -61,7 +52,6 @@
     </div>
 
     <div id="content">
-
 
         <div class="img-box">
 
@@ -75,11 +65,17 @@
             <div class="user-status-eight">8</div>
             <div class="user-status-nine">9</div>
             <div class="user-status-ten">10</div>
+            <div class="user-status-eleven">11</div>
+            <div class="user-status-tweleve">12</div>
+            <div class="user-status-thirteen">13</div>
+            <div class="user-status-fourteen">14</div>
+            <div class="user-status-fifteen">15</div>
+            <div class="user-status-sixteen">16</div>
+            <div class="user-status-seventeen">17</div>
 
             </a>
         </div>
         <div id="div1" class="squares"></div>
-        <!-- </div> -->
         <script>
             const input = document.getElementById("search-input");
             const searchBtn = document.getElementById("search-btn");
@@ -115,26 +111,18 @@
                 if (end == '4') {
                     t.add({
                         targets: '#div1',
-                        translateY: 200
+                        translateX: 750
                     })
 
                 }
                 if (end == '5') {
                     t.add({
                         targets: '#div1',
-                        translateX: 250
-                    })
-                    t.add({
-                        targets: '#div1',
-                        translateY: 200
+                        translateX: 1000
                     })
 
                 }
                 if (end == '6') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 500
-                    })
                     t.add({
                         targets: '#div1',
                         translateY: 200
@@ -143,11 +131,53 @@
                 if (end == '7') {
                     t.add({
                         targets: '#div1',
-                        translateY: 400
+                        translateX: 250
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 200
                     })
 
                 }
                 if (end == '8') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 500
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 200
+                    })
+
+                }
+                if (end == '9') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 750
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 200
+                    })
+                }
+                if (end == '10') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 1000
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 200
+                    })
+                }
+                if (end == '11') {
+
+                    t.add({
+                        targets: '#div1',
+                        translateY: 400
+                    })
+                }
+                if (end == '12') {
                     t.add({
                         targets: '#div1',
                         translateX: 250
@@ -156,9 +186,8 @@
                         targets: '#div1',
                         translateY: 400
                     })
-
                 }
-                if (end == '9') {
+                if (end == '13') {
                     t.add({
                         targets: '#div1',
                         translateX: 500
@@ -168,12 +197,42 @@
                         translateY: 400
                     })
                 }
-                if (end == '10') {
+                if (end == '14') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 750
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 400
+                    })
+                }
+                if (end == '15') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 1000
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 400
+                    })
+                }
+                if (end == '16') {
+
                     t.add({
                         targets: '#div1',
                         translateY: 600
                     })
-
+                }
+                if (end == '17') {
+                    t.add({
+                        targets: '#div1',
+                        translateX: 250
+                    })
+                    t.add({
+                        targets: '#div1',
+                        translateY: 600
+                    })
                 }
             }
 
@@ -204,14 +263,12 @@
                 var i = 0;
                 while (solutions[end][i]) {
                     var para = document.createElement("P");
-                    para.innerHTML = solutions[end][i];
+                    para.innerHTML = "[ " + solutions[end][i] + " ]";
 
                     document.getElementById("Poistion").appendChild(para);
                     i++;
-
                 }
             }
-
 
             function closeForm() {
                 document.getElementById("myForm").style.display = "none";

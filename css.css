@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
 .squares {
     width: 60px;
     height: 60px;
@@ -86,8 +91,8 @@ a.avatar-link {
 .user-status-four {
     border-radius: 50%;
     height: 30px;
-    margin-top: 225px;
-    margin-left: -15px;
+    margin-top: 25px;
+    margin-left: 735px;
     position: absolute;
     /* right: 30px;
     bottom: 30px; */
@@ -100,8 +105,8 @@ a.avatar-link {
 .user-status-five {
     border-radius: 50%;
     height: 30px;
-    margin-top: 225px;
-    margin-left: 235px;
+    margin-top: 25px;
+    margin-left: 985px;
     position: absolute;
     /* right: 30px;
     bottom: 30px; */
@@ -115,7 +120,7 @@ a.avatar-link {
     border-radius: 50%;
     height: 30px;
     margin-top: 225px;
-    margin-left: 485px;
+    margin-left: -15px;
     position: absolute;
     /* right: 30px;
     bottom: 30px; */
@@ -126,6 +131,62 @@ a.avatar-link {
 }
 
 .user-status-seven {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 225px;
+    margin-left: 235px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.user-status-eight {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 225px;
+    margin-left: 485px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.user-status-nine {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 225px;
+    margin-left: 735px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.user-status-ten {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 225px;
+    margin-left: 985px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.user-status-eleven {
     border-radius: 50%;
     height: 30px;
     margin-top: 425px;
@@ -139,7 +200,7 @@ a.avatar-link {
     color: white;
 }
 
-.user-status-eight {
+.user-status-tweleve {
     border-radius: 50%;
     height: 30px;
     margin-top: 425px;
@@ -153,7 +214,7 @@ a.avatar-link {
     color: white;
 }
 
-.user-status-nine {
+.user-status-thirteen {
     border-radius: 50%;
     height: 30px;
     margin-top: 425px;
@@ -167,11 +228,53 @@ a.avatar-link {
     color: white;
 }
 
-.user-status-ten {
+.user-status-fourteen {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 425px;
+    margin-left: 735px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.user-status-fifteen {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 425px;
+    margin-left: 985px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.user-status-sixteen {
     border-radius: 50%;
     height: 30px;
     margin-top: 625px;
     margin-left: -15px;
+    position: absolute;
+    /* right: 30px;
+    bottom: 30px; */
+    width: 30px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+
+.user-status-seventeen {
+    border-radius: 50%;
+    height: 30px;
+    margin-top: 625px;
+    margin-left: 235px;
     position: absolute;
     /* right: 30px;
     bottom: 30px; */
@@ -214,7 +317,7 @@ body {
 }
 
 .search {
-    width: 100%;
+    width: 60%;
     position: relative;
     /* display: flex; */
 }
@@ -258,10 +361,10 @@ body {
 }
 
 .container {
-    width: 200px;
-    height: 100px;
+    width: 10px;
+    height: 30px;
     position: absolute;
-    left: 40%;
+    left: 400px;
     /* top: 10%; */
     transform: translate(-50%, -50%);
     display: flex;
@@ -270,10 +373,10 @@ body {
 }
 
 .container2 {
-    width: 100px;
-    height: 100px;
+    width: 10px;
+    height: 30px;
     position: absolute;
-    left: 55%;
+    left: 500px;
     /* top: 10%; */
     transform: translate(-50%, -50%);
     display: flex;
@@ -283,13 +386,13 @@ body {
 
 .center {
     width: 10px;
-    height: 60px;
+    height: 20px;
     position: absolute;
 }
 
 .center2 {
     width: 10px;
-    height: 60px;
+    height: 20px;
     position: absolute;
 }
 
