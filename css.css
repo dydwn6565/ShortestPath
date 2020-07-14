@@ -317,8 +317,9 @@ body {
 }
 
 .search {
-    width: 60%;
-    position: relative;
+    width: 40%;
+    position: absolute;
+    top: -25px;
     /* display: flex; */
 }
 
@@ -364,8 +365,8 @@ body {
     width: 10px;
     height: 30px;
     position: absolute;
-    left: 400px;
-    /* top: 10%; */
+    left: 310px;
+    top: 16px;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -376,8 +377,8 @@ body {
     width: 10px;
     height: 30px;
     position: absolute;
-    left: 500px;
-    /* top: 10%; */
+    left: 420px;
+    top: 16px;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
@@ -397,8 +398,8 @@ body {
 }
 
 .btn {
-    width: 100px;
-    height: 30px;
+    width: 110px;
+    height: 40px;
     cursor: pointer;
     background: transparent;
     border: 1px solid #91C9FF;
@@ -409,7 +410,9 @@ body {
 svg {
     position: absolute;
     left: 0;
-    top: 0;
+    width: 100px;
+    height: 100px;
+    top: -14px;
     fill: none;
     stroke: #fff;
     stroke-dasharray: 150 480;
