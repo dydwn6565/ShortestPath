@@ -1,4 +1,4 @@
-function solve(graph, s) {
+function dijkstra(graph, s) {
     var answer = {};
     answer[s] = [];
     answer[s].dist = 0;

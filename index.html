@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <script src="dijkstra.js"></script>
+<script src="index.js"></script>
+<script src="prgoress.js"></script>
 <link rel="stylesheet" type="text/css" href="css.css">
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
 
 <body>
 
-    <div class="form-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
+    <div class="popup" id="myForm">
+        <form action="/action_page.php" class="container-form">
             <h1>Movement List</h1>
 
             <div id="Poistion">
@@ -17,33 +19,33 @@
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
-    <div class="container">
-        <div class="center">
-            <button class="btn" onclick="myFunction()">
+    <div class="routeContainer">
+        <div class="routeCenter">
+            <button class="bttn" onclick="route()">
             <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+              <polyline points="178,1 178,58 1,58 1,1 178,1"/>
+              <polyline points="178,1 178,58 1,58 1,1 178,1"/>
             </svg>
             <span>Route</span>
           </button>
         </div>
     </div>
-    <div class="container2">
-        <div class="center2">
-            <button class="btn" onclick="animations()">
+    <div class="animationContainer">
+        <div class="animationCenter">
+            <button class="bttn" onclick="animations()">
             <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-              <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+              <polyline points="178,1 178,58 1,58 1,1 178,1"/>
+              <polyline points="178,1 178,58 1,58 1,1 178,1"/>
             </svg>
             <span>Animations</span>
           </button>
         </div>
     </div>
 
-    <div class="wrap">
+    <div class="wrapping">
         <div class="search">
 
-            <input id="searchValue1" class="searchTerm" type="number" placeholder="Location" required></div>
+            <input id="searchValue1" class="searchBoxTerm" type="number" placeholder="Location" required></div>
 
         <i class="fa fa-search"></i>
         </button>
@@ -70,194 +72,21 @@
             <div class="user-status-thirteen">13</div>
             <div class="user-status-fourteen">14</div>
             <div class="user-status-fifteen">15</div>
-            
 
             </a>
         </div>
-        <div id="div1" class="squares"></div>
-        <script>
-            const input = document.getElementById("search-input");
-            const searchBtn = document.getElementById("search-btn");
+        <div class="page">
+            <div class="c-progressbar js-progressbar">
+                <span class="c-progressbar__value js-progressbar__value">70</span>
+                <svg class="c-progress js-progressbar__progress">
+                    <circle  class="c-progress__circle c-progress__progress-bg" cx="50%" cy="50%" r=".4em" stroke-width="var(--cProgressStrokeWidth)" stroke="var(--cProgressColor)" fill="none"></circle>
+                    <circle class="c-progress__circle c-progress__progress-value" cx="50%" cy="50%" r=".4em" stroke-width="var(--cProgressStrokeWidth)" stroke="var(--cProgressColor)" stroke-linejoin="round" stroke-linecap="round" fill="none"></circle>
+                </svg>
+            </div>
 
-            const expand = () => {
-                searchBtn.classList.toggle("close");
-                input.classList.toggle("square");
-            };
+        </div>
 
-            searchBtn.addEventListener("click", expand);
-
-            function animations() {
-
-                var end = document.getElementById("searchValue1").value;
-                const t = anime.timeline({
-                    //each of the below animations will have a 1000ms duration
-                    //and easeInSine easing
-                    duration: 1000,
-                    easing: 'easeInSine'
-                });
-                if (end == '2') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 250
-                    })
-                }
-                if (end == '3') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 500
-                    })
-                }
-                if (end == '4') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 750
-                    })
-
-                }
-                if (end == '5') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 1000
-                    })
-
-                }
-                if (end == '6') {
-                    t.add({
-                        targets: '#div1',
-                        translateY: 200
-                    })
-                }
-                if (end == '7') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 250
-                    })
-                    t.add({
-                        targets: '#div1',
-                        translateY: 200
-                    })
-
-                }
-                if (end == '8') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 500
-                    })
-                    t.add({
-                        targets: '#div1',
-                        translateY: 200
-                    })
-
-                }
-                if (end == '9') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 750
-                    })
-                    t.add({
-                        targets: '#div1',
-                        translateY: 200
-                    })
-                }
-                if (end == '10') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 1000
-                    })
-                    t.add({
-                        targets: '#div1',
-                        translateY: 200
-                    })
-                }
-                if (end == '11') {
-
-                    t.add({
-                        targets: '#div1',
-                        translateY: 400
-                    })
-                }
-                if (end == '12') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 250
-                    })
-                    t.add({
-                        targets: '#div1',
-                        translateY: 400
-                    })
-                }
-                if (end == '13') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 500
-                    })
-                    t.add({
-                        targets: '#div1',
-                        translateY: 400
-                    })
-                }
-                if (end == '14') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 750
-                    })
-                    t.add({
-                        targets: '#div1',
-                        translateY: 400
-                    })
-                }
-                if (end == '15') {
-                    t.add({
-                        targets: '#div1',
-                        translateX: 1000
-                    })
-                    t.add({
-                        targets: '#div1',
-                        translateY: 400
-                    })
-                }
-                
-            }
-
-            function myFunction() {
-
-                var end = document.getElementById("searchValue1").value;
-                console.log(1);
-
-                var solutions = solve(graph, 1);
-                console.log("From '" + 1 + "' to " + end);
-                for (var s in solutions) {
-                    if (!solutions[s]) continue;
-                    console.log(" -> " + s + ": [" + solutions[s].join(", ") + "] (dist:" + solutions[s].dist + ")");
-                }
-                var distance = solutions[end].dist;
-                openForm();
-                addvalue();
-
-            }
-
-            function openForm() {
-                document.getElementById("myForm").style.display = "block";
-            }
-
-            function addvalue() {
-                var solutions = solve(graph, 1);
-                var end = document.getElementById("searchValue1").value;
-                var i = 0;
-                while (solutions[end][i]) {
-                    var para = document.createElement("P");
-                    para.innerHTML = "[ " + solutions[end][i] + " ]";
-
-                    document.getElementById("Poistion").appendChild(para);
-                    i++;
-                }
-            }
-
-            function closeForm() {
-                document.getElementById("myForm").style.display = "none";
-            }
-        </script>
-
+    </div>
 </body>
 
 </html>

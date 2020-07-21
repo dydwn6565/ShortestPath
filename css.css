@@ -323,21 +323,23 @@ body {
     /* display: flex; */
 }
 
-.searchTerm {
-    width: 100%;
+.searchBoxTerm {
     border: 3px solid #00B4CC;
-    border-right: none;
     padding: 5px;
-    height: 20px;
     border-radius: 5px 0 0 5px;
     outline: none;
+    border-right: none;
+    height: 20px;
+    width: 100%;
     color: #9DBFAF;
 }
 
-.searchTerm:focus {
+.searchBoxTerm:focus {
     color: #00B4CC;
 }
 
+
+/* 
 .searchButton {
     width: 40px;
     height: 36px;
@@ -348,20 +350,20 @@ body {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     font-size: 20px;
-}
+} */
 
 
 /*Resize the wrap to see the search bar change!*/
 
-.wrap {
-    width: 30%;
+.wrapping {
     position: absolute;
     top: 4%;
-    left: 20%;
+    width: 30%;
+    left: 19%;
     transform: translate(-50%, -50%);
 }
 
-.container {
+.routeContainer {
     width: 10px;
     height: 30px;
     position: absolute;
@@ -373,31 +375,31 @@ body {
     align-items: center;
 }
 
-.container2 {
-    width: 10px;
-    height: 30px;
+.animationContainer {
+    width: 11px;
+    height: 29px;
     position: absolute;
-    left: 420px;
-    top: 16px;
+    left: 421px;
+    top: 15px;
     transform: translate(-50%, -50%);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-.center {
+.routeCenter {
     width: 10px;
     height: 20px;
     position: absolute;
 }
 
-.center2 {
+.animationCenter {
     width: 10px;
     height: 20px;
     position: absolute;
 }
 
-.btn {
+.bttn {
     width: 110px;
     height: 40px;
     cursor: pointer;
@@ -420,12 +422,12 @@ svg {
     transition: 1s ease-in-out;
 }
 
-.btn:hover {
+.bttn:hover {
     transition: 1s ease-in-out;
     background: #4F95DA;
 }
 
-.btn span {
+.bttn span {
     color: white;
     font-size: 18px;
     font-weight: 100;
@@ -433,21 +435,19 @@ svg {
 
 .open-button {
     background-color: #555;
-    color: white;
-    padding: 16px 20px;
+    color: black;
+    padding: 13px 20px;
     border: none;
     cursor: pointer;
     opacity: 0.8;
     position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 280px;
+    bottom: 12px;
 }
 
 
 /* The popup form - hidden by default */
 
-.form-popup {
+.popup {
     display: none;
     position: fixed;
     bottom: 0;
@@ -459,7 +459,7 @@ svg {
 
 /* Add styles to the form container */
 
-.form-container {
+.container-form {
     max-width: 300px;
     padding: 10px;
     background-color: white;
@@ -468,8 +468,8 @@ svg {
 
 /* Full-width input fields */
 
-.form-container input[type=text],
-.form-container input[type=password] {
+.container-form input[type=text],
+.container-form input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -480,8 +480,8 @@ svg {
 
 /* When the inputs get focus, do something */
 
-.form-container input[type=text]:focus,
-.form-container input[type=password]:focus {
+.container-form input[type=text]:focus,
+.container-form input[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }
@@ -489,7 +489,7 @@ svg {
 
 /* Set a style for the submit/login button */
 
-.form-container .btn {
+.container-form .btn {
     background-color: #4CAF50;
     color: white;
     padding: 16px 20px;
@@ -503,78 +503,38 @@ svg {
 
 /* Add a red background color to the cancel button */
 
-.form-container .cancel {
+.container-form .cancel {
     background-color: red;
 }
 
 
 /* Add some hover effects to buttons */
 
-.form-container .btn:hover,
+.container-form .btn:hover,
 .open-button:hover {
     opacity: 1;
 }
 
-.tb3 {
-    display: table;
-    width: 100%;
-}
-
-.td3 {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-input2,
-button2 {
-    color: #fff;
-    font-family: Nunito;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    background-color: transparent;
-}
-
-#cover {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    width: 550px;
-    padding: 35px;
-    margin: -83px auto 0 auto;
-    background-color: #ff7575;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
-    transform: scale(0.6);
-}
-
-form2 {
+.container-form-second {
     height: 96px;
 }
 
-input2[type="text"] {
+.container-form-second[type="text"] {
     width: 100%;
     height: 96px;
     font-size: 60px;
     line-height: 1;
 }
 
-input[type="text"]::placeholder {
+.input-second[type="text"]::placeholder {
     color: #e16868;
 }
 
-#s-cover {
-    width: 1px;
-    padding-left: 35px;
-}
-
-button3 {
+.button-second {
     position: relative;
     display: block;
-    width: 84px;
-    height: 96px;
-    cursor: pointer;
+    width: 74px;
+    height: 26px;
 }
 
 #s-circle {
@@ -591,7 +551,7 @@ button3 {
     transition: 0.5s ease all;
 }
 
-button3 span {
+.button-second span {
     position: absolute;
     top: 68px;
     left: 43px;
@@ -604,103 +564,66 @@ button3 span {
     transition: 0.5s ease all;
 }
 
-button3 span:before,
-button3 span:after {
+.button-thrid span:before,
+.button-third span:after {
     content: '';
     position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 45px;
-    height: 15px;
+    bottom: 3;
+    right: 2;
+    width: 33px;
+    height: 45px;
     background-color: #fff;
-    border-radius: 10px;
-    transform: rotateZ(0);
     transition: 0.5s ease all;
 }
 
-#s-cover:hover #s-circle {
+#e-cover:hover #s-circle {
     top: -1px;
-    width: 67px;
-    height: 15px;
+    width: 27px;
+    border-radius: 30px;
+    height: 55px;
     border-width: 0;
     background-color: #fff;
-    border-radius: 20px;
 }
 
-#s-cover:hover span {
-    top: 50%;
-    left: 56px;
+#e-cover:hover span {
+    top: 20%;
+    left: 46px;
     width: 25px;
     margin-top: -9px;
     transform: rotateZ(0);
 }
 
-#s-cover:hover button span:before {
-    bottom: 11px;
+#e-cover:hover button span:before {
+    bottom: 55px;
     transform: rotateZ(52deg);
+    left: 45px;
+    top: 45px;
 }
 
-#s-cover:hover button span:after {
+#e-cover:hover button span:after {
     bottom: -11px;
     transform: rotateZ(-52deg);
 }
 
-#s-cover:hover button span:before,
-#s-cover:hover button span:after {
+#e-cover:hover button span:before,
+#e-cover:hover button span:after {
     right: -6px;
     width: 40px;
     background-color: #fff;
 }
 
-#ytd-url {
-    display: block;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    padding: 10px 14px;
-    margin: 20px;
-    color: #fff;
-    font-family: Nunito;
-    font-size: 14px;
-    text-decoration: none;
-    background-color: #ff7575;
-    border-radius: 4px;
-    box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
-    z-index: 125;
-}
-
-:root3 {
-    --color-white: #fff;
-    --color-black: #333;
-    --color-gray: #75787b;
-    --color-gray-light: #bbb;
-    --color-gray-disabled: #e8e8e8;
-    --color-green: #53a318;
-    --color-green-dark: #383;
-    --font-size-small: .75rem;
-    --font-size-default: .875rem;
-}
-
-body2 {
-    margin: 2rem;
-    font-family: 'Open Sans', sans-serif;
-    color: var(--color-black);
-}
-
 h5 {
-    color: var(--color-gray);
-    font-size: var(--font-size-small);
     line-height: 1.5;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 3px;
 }
 
-section3 {
+.section-second {
     margin-bottom: 2rem;
 }
 
-.progress-bar {
+.progress-second-bar {
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -708,128 +631,66 @@ section3 {
     margin: 0 0 1rem 0;
 }
 
-.progress-bar li {
-    flex: 2;
-    position: relative;
-    padding: 0 0 14px 0;
-    font-size: var(--font-size-default);
-    line-height: 1.5;
-    color: var(--color-green);
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: visible;
-    min-width: 0;
-    text-align: center;
-    border-bottom: 2px solid var(--color-gray-disabled);
-}
-
-.progress-bar li:first-child,
-.progress-bar li:last-child {
+.progress-second-bar li:first-child,
+.progress-second-bar li:last-child {
     flex: 1;
+    margin: 10px;
 }
 
-.progress-bar li:last-child {
+.progress-second-bar li:last-child {
     text-align: right;
+    border: 2px solid;
 }
 
-.progress-bar li:before {
-    content: "";
+.progress-second-bar li:before {
     display: block;
-    width: 8px;
-    height: 8px;
-    background-color: var(--color-gray-disabled);
-    border-radius: 50%;
-    border: 2px solid var(--color-white);
+    width: 14px;
+    height: 14px;
+    border-radius: 40%;
+    border: 5px;
     position: absolute;
-    left: calc(50% - 6px);
-    bottom: -7px;
-    z-index: 3;
-    transition: all .2s ease-in-out;
+    bottom: -8px;
+    z-index: 4;
 }
 
-.progress-bar li:first-child:before {
+.progress-second-bar li:first-child:before {
     left: 0;
 }
 
-.progress-bar li:last-child:before {
+.progress-second-bar li:last-child:before {
     right: 0;
     left: auto;
+    top: 20px;
 }
 
-.progress-bar span {
+.pprogress-second-bar span {
     transition: opacity .3s ease-in-out;
+    opacity: 2;
 }
 
 .progress-bar li:not(.is-active) span {
     opacity: 0;
 }
 
-.progress-bar .is-complete:not(:first-child):after,
-.progress-bar .is-active:not(:first-child):after {
-    content: "";
-    display: block;
-    width: 100%;
+.progress-second-bar .progress-second-bar {
+    width: 200%;
     position: absolute;
-    bottom: -2px;
-    left: -50%;
+    bottom: 2px;
+    display: block;
     z-index: 2;
     border-bottom: 2px solid var(--color-green);
 }
 
-.progress-bar li:last-child span {
-    width: 200%;
-    display: inline-block;
+.progress-second-bar li:last-child span {
+    width: 50%;
+    display: outline-block;
     position: absolute;
-    left: -100%;
+    left: -50%;
 }
 
-.progress-bar .is-complete:last-child:after,
-.progress-bar .is-active:last-child:after {
-    width: 200%;
-    left: -100%;
-}
-
-.progress-bar .is-complete:before {
-    background-color: var(--color-green);
-}
-
-.progress-bar .is-active:before,
-.progress-bar li:hover:before,
-.progress-bar .is-hovered:before {
-    background-color: var(--color-white);
-    border-color: var(--color-green);
-}
-
-.progress-bar li:hover:before,
-.progress-bar .is-hovered:before {
-    transform: scale(1.33);
-}
-
-.progress-bar li:hover span,
-.progress-bar li.is-hovered span {
-    opacity: 1;
-}
-
-.progress-bar:hover li:not(:hover) span {
-    opacity: 0;
-}
-
-.x-ray .progress-bar,
-.x-ray .progress-bar li {
-    border: 1px dashed red;
-}
-
-.progress-bar .has-changes {
-    opacity: 1 !important;
-}
-
-.progress-bar .has-changes:before {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    left: calc(50% - 4px);
-    bottom: -20px;
-    background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%208%208%22%3E%3Cpath%20fill%3D%22%23ed1c24%22%20d%3D%22M4%200l4%208H0z%22%2F%3E%3C%2Fsvg%3E');
+.progress-second-bar .is-complete:last-child:after,
+.progress-second-bar .is-active:last-child:after {
+    width: 50%;
+    left: -50%;
+    position: relative;
 }
