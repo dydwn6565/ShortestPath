@@ -1,18 +1,18 @@
 function dijkstra(graph, s) {
     var answer = {};
     answer[s] = [];
-    answer[s].dist = 0;
+    answer[s].distance = 0;
 
     while (true) {
         var parent = null;
         var nearest = null;
-        var dist = Infinity;
+        var distance = Infinity;
 
         //for each existing solution
         for (var n in answer) {
             if (!answer[n])
                 continue
-            var ndist = answer[n].dist;
+            var nsdist = answer[n].distance;
             var neighbor = graph[n];
             //for each of its adjacent nodes...
             for (var a in neighbor) {
@@ -20,34 +20,34 @@ function dijkstra(graph, s) {
                 if (answer[a])
                     continue;
                 //choose nearest node with lowest *total* cost
-                var d = neighbor[a] + ndist;
-                if (d < dist) {
+                var ds = nsdist + neighbor[a];
+                if (ds < distance) {
                     //reference parent
                     parent = answer[n];
                     nearest = a;
-                    dist = d;
+                    distance = ds;
                 }
             }
         }
 
         //no more solutions
-        if (dist === Infinity) {
+        if (distance === Infinity) {
             break;
         }
 
         //extend parent's solution path
         answer[nearest] = parent.concat(nearest);
         //extend parent's cost
-        answer[nearest].dist = dist;
+        answer[nearest].distance = distance;
     }
 
     return answer;
 }
 
 //create graph
-var graph = {};
+var dijkstraGraph = {};
 
-var layout = {
+var layer = {
     '1': ['2', '6'],
     '2': ['3', '7'],
     '3': ['4', '8'],
@@ -67,13 +67,13 @@ var layout = {
     '17': [],
 }
 
-for (var id in layout) {
-    if (!graph[id])
-        graph[id] = {};
-    layout[id].forEach(function(aid) {
-        graph[id][aid] = 1;
-        if (!graph[aid])
-            graph[aid] = {};
-        graph[aid][id] = 1;
+for (var id in layer) {
+    if (!dijkstraGraph[id])
+        dijkstraGraph[id] = {};
+    layer[id].forEach(function(aid) {
+        dijkstraGraph[id][aid] = 1;
+        if (!dijkstraGraph[aid])
+            dijkstraGraph[aid] = {};
+        dijkstraGraph[aid][id] = 1;
     });
 }

@@ -146,7 +146,7 @@ function route() {
     var end = document.getElementById("searchValue1").value;
     console.log(1);
 
-    var solutions = dijkstra(graph, 1);
+    var solutions = dijkstra(dijkstraGraph, 1);
     console.log("From '" + 1 + "' to " + end);
     for (var s in solutions) {
         if (!solutions[s]) continue;
@@ -163,7 +163,7 @@ function openForm() {
 }
 
 function addvalue() {
-    var solutions = dijkstra(graph, 1);
+    var solutions = dijkstra(dijkstraGraph, 1);
     var end = document.getElementById("searchValue1").value;
     var i = 0;
     while (solutions[end][i]) {
