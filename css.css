@@ -317,7 +317,7 @@ body {
 }
 
 .search {
-    width: 40%;
+    width: 200px;
     position: absolute;
     top: -25px;
     /* display: flex; */
